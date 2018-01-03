@@ -14,6 +14,9 @@
 		1107E05F1FFCE60B008C514D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1107E05E1FFCE60B008C514D /* Assets.xcassets */; };
 		1107E0621FFCE60B008C514D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1107E0601FFCE60B008C514D /* LaunchScreen.storyboard */; };
 		1107E06D1FFCE60C008C514D /* lab_core_dataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1107E06C1FFCE60C008C514D /* lab_core_dataTests.swift */; };
+		1107E0781FFCF2C6008C514D /* UtilitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1107E0771FFCF2C6008C514D /* UtilitiesViewController.swift */; };
+		11FAD48B1FFCFCF5005199F8 /* ReadingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FAD48A1FFCFCF5005199F8 /* ReadingsController.swift */; };
+		11FAD48D1FFD04FD005199F8 /* SensorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FAD48C1FFD04FD005199F8 /* SensorsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		1107E0681FFCE60C008C514D /* lab_core_dataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab_core_dataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1107E06C1FFCE60C008C514D /* lab_core_dataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab_core_dataTests.swift; sourceTree = "<group>"; };
 		1107E06E1FFCE60C008C514D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1107E0771FFCF2C6008C514D /* UtilitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesViewController.swift; sourceTree = "<group>"; };
+		11FAD48A1FFCFCF5005199F8 /* ReadingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsController.swift; sourceTree = "<group>"; };
+		11FAD48C1FFD04FD005199F8 /* SensorsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +85,11 @@
 		1107E0531FFCE60B008C514D /* lab_core_data */ = {
 			isa = PBXGroup;
 			children = (
+				11FAD48C1FFD04FD005199F8 /* SensorsController.swift */,
+				11FAD48A1FFCFCF5005199F8 /* ReadingsController.swift */,
 				1107E0541FFCE60B008C514D /* AppDelegate.swift */,
 				1107E0561FFCE60B008C514D /* ViewController.swift */,
+				1107E0771FFCF2C6008C514D /* UtilitiesViewController.swift */,
 				1107E0581FFCE60B008C514D /* Main.storyboard */,
 				1107E05E1FFCE60B008C514D /* Assets.xcassets */,
 				1107E0601FFCE60B008C514D /* LaunchScreen.storyboard */,
@@ -205,6 +214,9 @@
 				1107E0571FFCE60B008C514D /* ViewController.swift in Sources */,
 				1107E0551FFCE60B008C514D /* AppDelegate.swift in Sources */,
 				1107E05D1FFCE60B008C514D /* lab_core_data.xcdatamodeld in Sources */,
+				11FAD48B1FFCFCF5005199F8 /* ReadingsController.swift in Sources */,
+				1107E0781FFCF2C6008C514D /* UtilitiesViewController.swift in Sources */,
+				11FAD48D1FFD04FD005199F8 /* SensorsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

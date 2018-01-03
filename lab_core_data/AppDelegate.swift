@@ -13,10 +13,34 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    func createSensors() {
+        print("createSensors called");
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            let sensors = try context.fetch(Sensor.fetchRequest())
+            if sensors.count == 0 {
+                print("there is no sensors")
+                for i in 1...20 {
+                    let sensor = Sensor(context: context)
+                    sensor.name = "Sensor \(i)"
+                    sensor.desc = "Description \(i)"
+                    // Save the data to coredata
+                    
+                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                }
+            } else {
+                print("there are \(sensors.count) sensors")
+            }
+        }
+        catch {
+            print("Fetching Failed")
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        createSensors();
         return true
     }
 
