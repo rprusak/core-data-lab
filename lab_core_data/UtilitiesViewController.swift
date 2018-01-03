@@ -108,7 +108,64 @@ class UtilitiesViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onFindLargestAndSmallestTimestampClicked(_ sender: UIButton) {
         print("find largest and smallest timestamp clicked")
-        self.resultTextView.text = "find largest and smallest timestamp clicked";
+        findSmallestTimestamp()
+        findLargestTimestamp()
+    }
+    
+    func findSmallestTimestamp() {
+        let startTime = NSDate()
+
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reading")
+        request.returnsObjectsAsFaults = false
+        
+        let expressionDesc = NSExpressionDescription()
+        expressionDesc.name = "result"
+        expressionDesc.expression = NSExpression(forFunction: "min:", arguments:[NSExpression(forKeyPath: "timestamp")])
+        expressionDesc.expressionResultType = .integer64AttributeType
+        
+        request.propertiesToFetch = [expressionDesc]
+        request.resultType = .dictionaryResultType
+        
+        do {
+            let result = try context.fetch(request)
+            let dict = result[0] as! [String:Float]
+            
+            let val = dict["result"]!
+            
+            let finishTime = NSDate()
+            let measuredTime = finishTime.timeIntervalSince(startTime as Date)
+            self.resultTextView.text = "Min timestamp: \(val), time: \(measuredTime)";
+        } catch {
+            print ("There was an error")
+        }
+    }
+    
+    func findLargestTimestamp() {
+        let startTime = NSDate()
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reading")
+        request.returnsObjectsAsFaults = false
+        
+        let expressionDesc = NSExpressionDescription()
+        expressionDesc.name = "result"
+        expressionDesc.expression = NSExpression(forFunction: "max:", arguments:[NSExpression(forKeyPath: "timestamp")])
+        expressionDesc.expressionResultType = .integer64AttributeType
+        
+        request.propertiesToFetch = [expressionDesc]
+        request.resultType = .dictionaryResultType
+        
+        do {
+            let result = try context.fetch(request)
+            let dict = result[0] as! [String:Float]
+            
+            let val = dict["result"]!
+            
+            let finishTime = NSDate()
+            let measuredTime = finishTime.timeIntervalSince(startTime as Date)
+            self.resultTextView.text = self.resultTextView.text + " Max timestamp: \(val), time: \(measuredTime)";
+        } catch {
+            print ("There was an error")
+        }
     }
     
     @IBAction func onCalculateAverageReadingValuesClicked(_ sender: UIButton) {
