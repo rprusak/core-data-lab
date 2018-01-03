@@ -3,15 +3,14 @@
     <entity name="Reading" representedClassName="Reading" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sensor" inverseName="relationship" inverseEntity="Sensor" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sensor" syncable="YES"/>
     </entity>
     <entity name="Sensor" representedClassName="Sensor" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reading" inverseName="relationship" inverseEntity="Reading" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Sensor" positionX="-758" positionY="207" width="137" height="88"/>
-        <element name="Reading" positionX="-380" positionY="128" width="128" height="88"/>
+        <element name="Reading" positionX="-360" positionY="254" width="128" height="88"/>
+        <element name="Sensor" positionX="-758" positionY="207" width="137" height="73"/>
     </elements>
 </model>

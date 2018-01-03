@@ -171,7 +171,37 @@ class UtilitiesViewController: UIViewController, UITextFieldDelegate {
     @IBAction func onCalculateAverageReadingValuesClicked(_ sender: UIButton) {
         print("calculate average reading values clicked")
         self.resultTextView.text = "calculate average reading values clicked"
+        calculateAverageValue()
     }
+    
+    func calculateAverageValue() {
+        let startTime = NSDate()
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reading")
+        request.returnsObjectsAsFaults = false
+        
+        let expressionDesc = NSExpressionDescription()
+        expressionDesc.name = "result"
+        expressionDesc.expression = NSExpression(forFunction: "average:", arguments:[NSExpression(forKeyPath: "value")])
+        expressionDesc.expressionResultType = .integer64AttributeType
+        
+        request.propertiesToFetch = [expressionDesc]
+        request.resultType = .dictionaryResultType
+        
+        do {
+            let result = try context.fetch(request)
+            let dict = result[0] as! [String:Float]
+            
+            let val = dict["result"]!
+            
+            let finishTime = NSDate()
+            let measuredTime = finishTime.timeIntervalSince(startTime as Date)
+            self.resultTextView.text = "Average value: \(val), time: \(measuredTime)";
+        } catch {
+            print ("There was an error")
+        }
+    }
+    
     @IBAction func onCalculateNumberOfReadingsAndAverageClicked(_ sender: UIButton) {
         print("calculate the number of readings and average clicked")
         self.resultTextView.text = "calculate the number of readings and average clicked"
