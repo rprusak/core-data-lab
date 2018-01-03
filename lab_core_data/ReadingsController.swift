@@ -38,7 +38,7 @@ class ReadingsController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let tmp = readings[indexPath.row]
         cell.textLabel?.text = "Time: \(tmp.timestamp), value: \(tmp.value)"
-        cell.detailTextLabel?.text = "From sensor: \(tmp.relationship?.name ?? "unknown")"
+        cell.detailTextLabel?.text = "From sensor: \(tmp.sensor?.name ?? "unknown")"
         return cell
     }
     

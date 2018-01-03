@@ -38,6 +38,7 @@ class SensorsController: UIViewController, UITableViewDataSource, UITableViewDel
         let tmp = sensors[indexPath.row]
         cell.textLabel?.text = tmp.name
         cell.detailTextLabel?.text = tmp.desc
+        
         return cell
     }
     
