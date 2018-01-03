@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class UtilitiesViewController: UIViewController, UITextFieldDelegate {
 
@@ -86,6 +87,23 @@ class UtilitiesViewController: UIViewController, UITextFieldDelegate {
         // Save the data to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    @IBAction func onDeleteAllRecordsClicked(_ sender: UIButton) {
+        print("delete all records clicked")
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Reading")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do {
+            let startTime = NSDate()
+            try context.execute(deleteRequest)
+            try context.save()
+            let finishTime = NSDate()
+            
+            let measuredTime = finishTime.timeIntervalSince(startTime as Date)
+            self.resultTextView.text = "Deleting records took \(measuredTime)";
+        } catch {
+            print ("There was an error")
+        }
     }
     
     @IBAction func onFindLargestAndSmallestTimestampClicked(_ sender: UIButton) {
