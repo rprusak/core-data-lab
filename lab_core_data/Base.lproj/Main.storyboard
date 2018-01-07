@@ -110,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="380" y="-247.82608695652175"/>
         </scene>
-        <!--Readings-->
+        <!--Records-->
         <scene sceneID="afp-9L-T5d">
             <objects>
                 <tableViewController id="SJS-sd-SfK" customClass="ReadingsController" customModule="lab_core_data" customModuleProvider="target" sceneMemberID="viewController">
@@ -149,7 +149,7 @@
                             <outlet property="delegate" destination="SJS-sd-SfK" id="NKI-gE-wo9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Readings" id="Z22-cT-gP6"/>
+                    <navigationItem key="navigationItem" title="Records" id="Z22-cT-gP6"/>
                     <connections>
                         <outlet property="tableView" destination="Wft-PA-F40" id="pBK-dm-p4e"/>
                     </connections>
@@ -177,11 +177,11 @@
             </objects>
             <point key="canvasLocation" x="-569" y="87"/>
         </scene>
-        <!--Readings-->
+        <!--Records-->
         <scene sceneID="6zd-3M-H8h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LWI-MA-mNO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Readings" id="Dkv-eO-clr"/>
+                    <tabBarItem key="tabBarItem" title="Records" id="Dkv-eO-clr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sYT-8X-5QJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
